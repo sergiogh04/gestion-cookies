@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cookies.css') }}">
+</head>
+<body>
+    <h1>Bienvenido a nuestra página</h1>
+    {% if consent == 'accepted' %}
+    <p>Has aceptado las cookies. ¡Gracias por ayudarnos a mejorar tu experiencia!</p>
+    {% elif consent == 'rejected' %}
+    <p>Has rechazado las cookies. Respetamos tu decisión.</p>
+    {% endif %}
+    <a href="/delete_cookies" class="button delete">Modificar Preferencias</a>
+</body>
+</html>
